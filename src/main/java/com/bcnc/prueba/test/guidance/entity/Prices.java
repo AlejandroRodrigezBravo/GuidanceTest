@@ -2,13 +2,15 @@ package com.bcnc.prueba.test.guidance.entity;
 
 import java.io.Serializable;
 import java.util.Date;
-
+import java.util.List;
 import org.springframework.format.annotation.DateTimeFormat;
-
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
@@ -16,8 +18,10 @@ import jakarta.persistence.TemporalType;
  * Clase que representa a la tabla prices
  * 
  * @author bravo
- * @version 24/08/2023 1.0.0
+  * @version 25/08/2024 1.0.0
  */
+@Entity
+@Table(name = "prices")
 public class Prices implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -45,6 +49,9 @@ public class Prices implements Serializable {
 	private Double price;
 
 	private String curr;
+	
+	@OneToMany(mappedBy = "prices")
+	private List<Brand> brands;
 
 	public Prices() {
 		
@@ -114,11 +121,21 @@ public class Prices implements Serializable {
 		this.curr = curr;
 	}
 
+	public List<Brand> getBrands() {
+		return brands;
+	}
+
+	public void setBrands(List<Brand> brands) {
+		this.brands = brands;
+	}
+
 	@Override
 	public String toString() {
 		return "Prices [brandId=" + brandId + ", startDate=" + startDate + ", endDate=" + endDate + ", priceList="
 				+ priceList + ", productId=" + productId + ", priority=" + priority + ", price=" + price + ", curr="
-				+ curr + "]";
+				+ curr + ", brands=" + brands + "]";
 	}
+
+	
 
 }
