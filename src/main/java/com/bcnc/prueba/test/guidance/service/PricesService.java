@@ -1,6 +1,6 @@
 package com.bcnc.prueba.test.guidance.service;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import com.bcnc.prueba.test.guidance.entity.Prices;
@@ -13,5 +13,5 @@ import com.bcnc.prueba.test.guidance.entity.Prices;
 
 public interface PricesService {
 
-	public List<Prices> consulta(Date fechaApp, Long idProd, Long idBrand);
+	public List<Prices>  consulta(LocalDateTime fechaAppStar,LocalDateTime fechaAppEnd, Long idProd, String idBrand);
 }

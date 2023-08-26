@@ -1,15 +1,15 @@
 package com.bcnc.prueba.test.guidance.entity;
 
 import java.io.Serializable;
-import java.util.Date;
-import java.util.List;
+import java.time.LocalDateTime;
+
 import org.springframework.format.annotation.DateTimeFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -28,56 +28,73 @@ public class Prices implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long brandId;
+	private Long id;
+		
+	@Column(name = "brandId")	
+	private String brandId;
 	
-	@Column(name = "create_at")
-	@Temporal(TemporalType.DATE)
+	@Column(name = "startDate")
+	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date startDate;
+	private LocalDateTime startDate;
 	
-	@Column(name = "create_at")
-	@Temporal(TemporalType.DATE)
+	@Column(name = "endDate")
+	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date endDate;
+	private LocalDateTime endDate;
 
+	@Column(name = "priceList")
 	private Long priceList;
 
+	@Column(name = "productId")
 	private Long productId;
 	
+	@Column(name = "priority")
 	private String priority;
 
+	@Column(name = "price")
 	private Double price;
 
+	@Column(name = "curr")
 	private String curr;
-	
-	@OneToMany(mappedBy = "prices")
-	private List<Brand> brands;
 
 	public Prices() {
 		
 	}
 	
-	public Long getBrandId() {
+	
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+
+	public String getBrandId() {
 		return brandId;
 	}
 
-	public void setBrandId(Long brandId) {
+	public void setBrandId(String brandId) {
 		this.brandId = brandId;
 	}
 
-	public Date getStartDate() {
+	public LocalDateTime getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(Date startDate) {
+	public void setStartDate(LocalDateTime startDate) {
 		this.startDate = startDate;
 	}
 
-	public Date getEndDate() {
+	public LocalDateTime getEndDate() {
 		return endDate;
 	}
 
-	public void setEndDate(Date endDate) {
+	public void setEndDate(LocalDateTime endDate) {
 		this.endDate = endDate;
 	}
 
@@ -121,20 +138,16 @@ public class Prices implements Serializable {
 		this.curr = curr;
 	}
 
-	public List<Brand> getBrands() {
-		return brands;
-	}
 
-	public void setBrands(List<Brand> brands) {
-		this.brands = brands;
-	}
 
 	@Override
 	public String toString() {
-		return "Prices [brandId=" + brandId + ", startDate=" + startDate + ", endDate=" + endDate + ", priceList="
-				+ priceList + ", productId=" + productId + ", priority=" + priority + ", price=" + price + ", curr="
-				+ curr + ", brands=" + brands + "]";
+		return "Prices [id=" + id + ", brandId=" + brandId + ", startDate=" + startDate + ", endDate=" + endDate
+				+ ", priceList=" + priceList + ", productId=" + productId + ", priority=" + priority + ", price="
+				+ price + ", curr=" + curr + "]";
 	}
+
+	
 
 	
 

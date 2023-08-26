@@ -1,6 +1,6 @@
 package com.bcnc.prueba.test.guidance.service.impl;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +22,16 @@ public class PricesServiceServiceImpl implements PricesService {
 	@Autowired
 	private IPricesRepository repository;
 	
+	public PricesServiceServiceImpl (IPricesRepository repository) {
+		this.repository = repository;
+	}
+
 	@Override
-	public List<Prices> consulta(Date fechaApp, Long idProd, Long idBrand) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Prices> consulta(LocalDateTime  fechaAppStar,LocalDateTime fechaAppEnd, Long idProd, String idBrand) {
+		
+		List<Prices> prices = repository.findByBrandIdAndProductIdAndStartDateGreaterThanEqualAndEndDateLessThanEqual(idBrand,idProd,fechaAppStar, fechaAppEnd);
+	
+		return prices;
 	}
 
 }
