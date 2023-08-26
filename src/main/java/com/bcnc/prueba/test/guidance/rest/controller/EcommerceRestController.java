@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bcnc.prueba.test.guidance.entity.Prices;
+import com.bcnc.prueba.test.guidance.entity.PricesEntity;
 import com.bcnc.prueba.test.guidance.service.PricesService;
 
 /**
@@ -35,13 +35,13 @@ public class EcommerceRestController {
 	}
 	
 	@GetMapping("/prices")
-	public ResponseEntity<List<Prices>> pricesEndPoint(@RequestParam(name = "fechaAppStar") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime fechaAppStar,
+	public ResponseEntity<List<PricesEntity>> pricesEndPoint(@RequestParam(name = "fechaAppStar") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime fechaAppStar,
 			@RequestParam(name = "fechaAppEnd") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime fechaAppEnd,
             @RequestParam(name = "idProd") long idProd,
             @RequestParam(name = "idBrand") String idBrand) throws Exception {
 		
-		List<Prices> price = new ArrayList<>();
-		ResponseEntity<List<Prices>> rest = null;
+		List<PricesEntity> price = new ArrayList<>();
+		ResponseEntity<List<PricesEntity>> rest = null;
 		
 		try {
 			price = pricesServices.consulta(fechaAppStar, fechaAppEnd, idProd, idBrand);

@@ -22,7 +22,7 @@ import jakarta.persistence.TemporalType;
  */
 @Entity
 @Table(name = "prices")
-public class Prices implements Serializable {
+public class PricesEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -58,7 +58,7 @@ public class Prices implements Serializable {
 	@Column(name = "curr")
 	private String curr;
 
-	public Prices() {
+	public PricesEntity() {
 		
 	}
 	

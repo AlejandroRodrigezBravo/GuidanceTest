@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bcnc.prueba.test.guidance.entity.Prices;
+import com.bcnc.prueba.test.guidance.entity.PricesEntity;
 import com.bcnc.prueba.test.guidance.repository.IPricesRepository;
 import com.bcnc.prueba.test.guidance.service.PricesService;
 
@@ -27,9 +27,9 @@ public class PricesServiceServiceImpl implements PricesService {
 	}
 
 	@Override
-	public List<Prices> consulta(LocalDateTime  fechaAppStar,LocalDateTime fechaAppEnd, Long idProd, String idBrand) {
+	public List<PricesEntity> consulta(LocalDateTime  fechaAppStar,LocalDateTime fechaAppEnd, Long idProd, String idBrand) {
 		
-		List<Prices> prices = repository.findByBrandIdAndProductIdAndStartDateGreaterThanEqualAndEndDateLessThanEqual(idBrand,idProd,fechaAppStar, fechaAppEnd);
+		List<PricesEntity> prices = repository.findByBrandIdAndProductIdAndStartDateGreaterThanEqualAndEndDateLessThanEqual(idBrand,idProd,fechaAppStar, fechaAppEnd);
 	
 		return prices;
 	}

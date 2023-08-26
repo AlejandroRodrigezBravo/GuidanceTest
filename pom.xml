@@ -53,6 +53,18 @@
 	        <version>0.8.7</version> <!-- Cambia la versión si es necesario -->
 	        <scope>test</scope>
     	</dependency>
+    	<dependency>
+		    <groupId>io.rest-assured</groupId>
+		    <artifactId>rest-assured</artifactId>
+		     <!-- Cambia la versión si es necesario -->
+		    <scope>test</scope>
+		</dependency>
+		<dependency>
+		    <groupId>io.rest-assured</groupId>
+		    <artifactId>spring-mock-mvc</artifactId>
+		     <!-- Cambia la versión si es necesario -->
+		    <scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
