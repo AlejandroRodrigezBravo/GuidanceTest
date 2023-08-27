@@ -18,7 +18,7 @@ import jakarta.persistence.TemporalType;
  * Clase que representa a la tabla prices
  * 
  * @author bravo
-  * @version 25/08/2024 1.0.0
+  * @version 25/08/2023 1.0.0
  */
 @Entity
 @Table(name = "prices")
@@ -34,12 +34,12 @@ public class PricesEntity implements Serializable {
 	private String brandId;
 	
 	@Column(name = "startDate")
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.TIMESTAMP) //Aqui en vez de un localDateTime se puede rectificar y añadir un localDate
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDateTime startDate;
 	
 	@Column(name = "endDate")
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.TIMESTAMP)//Aqui en vez de un localDateTime se puede rectificar y añadir un localDate
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDateTime endDate;
 

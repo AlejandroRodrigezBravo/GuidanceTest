@@ -37,10 +37,10 @@ public class PricesRepositoryTest {
 		String brandId = "1";
 		Long produId= 35455L;
 
-		List<PricesEntity> listPrices = repository.findByBrandIdAndProductIdAndStartDateGreaterThanEqualAndEndDateLessThanEqual(brandId, produId,LocalDateTime.of(LocalDate.of(2020, 06, 14), LocalTime.of(00,00, 00)),LocalDateTime.of(LocalDate.of(2020, 12, 31), LocalTime.of(23,59,59)));
+		List<PricesEntity> listPrices = repository.findByBrandIdAndProductIdAndStartDateGreaterThanEqualAndEndDateLessThanEqualOrderByPriorityDesc(brandId, produId,LocalDateTime.of(LocalDate.of(2020, 06, 14), LocalTime.of(00,00, 00)),LocalDateTime.of(LocalDate.of(2020, 12, 31), LocalTime.of(23,59,59)));
 
 		assertAll(
-				() -> assertNotNull(listPrices)
+				() -> assertNotNull(listPrices) //Se comprueba con assertion qaue el valor no es nulo y se testea la capa repository
 		);
 	}
 }

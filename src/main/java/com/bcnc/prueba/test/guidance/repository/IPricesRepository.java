@@ -11,10 +11,11 @@ import com.bcnc.prueba.test.guidance.entity.PricesEntity;
 @Repository
 public interface IPricesRepository extends JpaRepository<PricesEntity, Long> {
 
-	List<PricesEntity> findByBrandIdAndProductIdAndStartDateGreaterThanEqualAndEndDateLessThanEqual(String brandId,Long product,LocalDateTime star,LocalDateTime end);
+	List<PricesEntity> findByBrandIdAndProductIdAndStartDateGreaterThanEqualAndEndDateLessThanEqualOrderByPriorityDesc(String brandId,Long product,LocalDateTime star,LocalDateTime end);
+	//Se puede hacer de muchas maneras donde una vez recupere la lista de todoas las coincidencias añadir filtro más especifico y devolver en vez de una lista un solo elemento.
+	//PricesEntity findByBrandIdAndProductIdAndStartDateGreaterThanEqualAndEndDateLessThanEqualOrderByPriorityDesc(String brandId,Long product,LocalDateTime star,LocalDateTime end);
+	//List<PricesEntity> findByStartDateOrderByPriorityDesc(LocalDateTime star);
+	//List<PricesEntity> findByEndDateOrderByPriorityDesc(LocalDateTime end);
 	
-	//Prices findByProductID(Long product);
-	
-	//Prices findByStartDateGreaterThanEqualAndEndDateLessThanEqual(LocalDate star, LocalDate  end);
 	
 }
