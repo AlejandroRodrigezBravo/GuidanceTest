@@ -24,7 +24,7 @@ Este repositorio contiene un proyecto de prueba técnica implementado con Spring
 
 - **Jacoco:** Para ver el covegare de la aplicacion sobre los test realizado, añado en el pom.xml el plugins de jacoco. Se genera en la carpeta /target/site/jacoco/index.html
 
-- **Casos de prueba:** Realizo pruebas integradas con postman donde realizo los distintos casos que se puede dar devolviendo la respuesta que se espera, segun diseñod e la aplicación. 
+- **Casos de prueba:** Realizo pruebas integradas con postman donde realizo los distintos casos que se puede dar devolviendo la respuesta que se espera, segun diseño de la aplicación. 
 
 ## Posibles mejoras
 
