@@ -22,7 +22,9 @@ Este repositorio contiene un proyecto de prueba técnica implementado con Spring
 
 - **Test JUnit y Mockito:** Se desarrolla test unitario y de integración, de las capa repository, service y controller. Obteniendo más de un 95% de coverage.
 
-- **Jacoco:** Para ver el covegare de la aplicacion sobre los test realizado, añado en el pom.xml el plugins de jacoco. Se genera en la carpeta /target/site/jacoco/index.html 
+- **Jacoco:** Para ver el covegare de la aplicacion sobre los test realizado, añado en el pom.xml el plugins de jacoco. Se genera en la carpeta /target/site/jacoco/index.html
+
+- **Casos de prueba:** Realizo pruebas integradas con postman donde realizo los distintos casos que se puede dar devolviendo la respuesta que se espera, segun diseñod e la aplicación. 
 
 ## Posibles mejoras
 
@@ -37,7 +39,15 @@ Este repositorio contiene un proyecto de prueba técnica implementado con Spring
 1. Clona este repositorio en tu máquina local.
 2. Abre el proyecto en tu entorno de desarrollo preferido (por ejemplo, IntelliJ IDEA o Eclipse).
 3. Ejecuta la aplicación Spring Boot.
-4. Accede al endpoint utilizando http://localhost:8080/api/prices?fechaAppStar=2020-06-14T00:00:00.00&fechaAppEnd=2020-12-31T23:59:59.00&idProd=35455&idBrand=1.
+4. Se puede realizar la prueba desde cualquier navegador, ya que es una llamada GET. Otra opción que se puede utilizar es postman.
+5. Accede al endpoint utilizando: **http://localhost:8080/api/prices?fechaAppStar=2020-06-14T00:00:00.00&fechaAppEnd=2020-12-31T23:59:59.00&idProd=35455&idBrand=1.**
+
+- **JAR:**
+1. Para levantar la aplicación con comando en cmd, descargar el proyecto.
+2. En mi caso lo tengo el proyecto en C:\DEV\proyectos\GuidanceTest\target> **Aqui donde lo tengais descargado: utilizar comando cd para moveros entre carpeta**
+3. Con el comando java -jar GuidanceTest-0.0.1-SNAPSHOT.jar
+4. Se puede realizar pruebas sin tener un entorno de desarrollo (IntelliJ IDEA o Eclipse).
+5. **IMPORTANTE:** Se tiene que tener el JDK 11 o superior instalado en el PC.
 
 ## Contribuciones
 
